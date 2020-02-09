@@ -1,6 +1,6 @@
 {
   "name": "benjamin-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "jdxcode",
   "bin": {
     "benjamin": "./bin/run"
