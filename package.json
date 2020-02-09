@@ -1,4 +1,7 @@
 {
+  "name": "benjamin-cli",
+  "version": "0.0.0",
+  "author": "jdxcode",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
