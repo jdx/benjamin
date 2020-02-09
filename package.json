@@ -2,13 +2,8 @@
   "name": "benjamin-cli",
   "version": "0.0.2",
   "author": "jdxcode",
-  "license": "MIT",
   "bin": {
     "benjamin": "./bin/run"
-  },
-  "scripts": {
-    "prepare": "tsc -b",
-    "test": "echo TODO"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -22,5 +17,14 @@
     "eslint": "^6.8.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.1-rc"
+  },
+  "files": [
+    "/lib"
+  ],
+  "license": "MIT",
+  "repository": "jdxcode/benjamin",
+  "scripts": {
+    "prepare": "tsc -b",
+    "test": "echo TODO"
   }
 }
