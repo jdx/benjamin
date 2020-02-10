@@ -11,14 +11,7 @@ const PLAID_PUBLIC_KEY = process.env['PLAID_PUBLIC_KEY']
 const PLAID_SECRET = process.env['PLAID_SECRET']
 const PLAID_ENV = process.env['PLAID_ENV'] || 'sandbox'
 
-// We store the access_token in memory
-// In production, store it in a secure persistent data store
-let ACCESS_TOKEN
-let PUBLIC_TOKEN
-let ITEM_ID
-
-// Initialize the Plaid client
-var client = new plaid.Client(
+let client = new plaid.Client(
   PLAID_CLIENT_ID,
   PLAID_SECRET,
   PLAID_PUBLIC_KEY,
@@ -45,10 +38,10 @@ const home = os.homedir()
 const configPath = path.join(home, '.config/benjamin')
 
 app.post('/get_access_token', async (req, rsp) => {
-  PUBLIC_TOKEN = req.body.public_token
+  let PUBLIC_TOKEN = req.body.public_token
   const tokenResponse = await client.exchangePublicToken(PUBLIC_TOKEN)
-  ACCESS_TOKEN = tokenResponse.access_token
-  ITEM_ID = tokenResponse.item_id
+  let ACCESS_TOKEN = tokenResponse.access_token
+  let ITEM_ID = tokenResponse.item_id
   console.dir(tokenResponse)
   await fs.mkdirp(configPath)
   await fs.writeJSON(path.join(configPath, 'token.json'), tokenResponse)
